@@ -40,6 +40,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const category = await Category.findByIdAndUpdate(
+    req.params.id, //i guess
     {
       name: req.body.name,
       icon: req.body.icon,
@@ -65,7 +66,7 @@ router.delete("/:id", (req, res) => {
       } else {
         return res
           .status(404)
-          .json({ success: false, message: "The ategory not found." });
+          .json({ success: false, message: "The category not found." });
       }
     })
     .catch((err) => {
