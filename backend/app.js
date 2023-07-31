@@ -5,8 +5,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv/config");
 
-const authJwt = require('./helpres/jwt');
-const errorHandler = require('./helpres/error-handler');
+const authJwt = require('./helpers/jwt');
+const errorHandler = require('./helpers/error-handler');
 
 app.use(cors());
 app.options("*", cors());
